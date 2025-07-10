@@ -1,0 +1,32 @@
+# .github/code-rabbit.yml
+
+enabled: true
+model: gpt-4
+
+review:
+  on_open: true
+  on_update: true
+  comment_mode: suggestion  # Use 'comment' if you prefer plain comments
+
+files:
+  include:
+    - '**/*.js'
+    - '**/*.ts'
+    - '**/*.jsx'
+    - '**/*.tsx'
+  exclude:
+    - '**/node_modules/**'
+    - '**/dist/**'
+    - '**/build/**'
+
+prompt:
+  summary: "Summarize what this pull request is doing in one paragraph."
+  review: "Review this code like a senior frontend developer. Suggest improvements in code quality, structure, performance, or best practices."
+
+comments:
+  max_comments: 10
+  min_severity: medium
+
+identity:
+  name: "Code Rabbit"
+  icon: "🐰"
